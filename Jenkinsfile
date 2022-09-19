@@ -19,6 +19,7 @@ pipeline {
             steps{
                 sh '''
                 #!/bin/bash
+                cd ./
                 chmod +x config.sh
                 ./config.sh
                 '''
