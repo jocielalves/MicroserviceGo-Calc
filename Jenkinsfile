@@ -17,11 +17,11 @@ pipeline {
         }
         stage('Gatling Test'){
             steps{
-                sh """
+                sh '''
                 #!/bin/bash
-                cp TestSimulation.scala /tmp/gatling/user-files/simulations/computerdatabase
-                /tmp/gatling/bin/gatling.sh -s computerdatabase.TestSimulation --run-mode local
-                """
+                chmod +x config.sh
+                ./config.sh
+                '''
             }
         }
 
