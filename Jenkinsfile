@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('GitHub') {
             steps{
-                git branch: 'main', url: 'https://github.com/'
+                git branch: 'main', url: 'https://github.com/jocielalves/MicroserviceGo-Calc'
             }
         }
         stage('Start Calc') {
