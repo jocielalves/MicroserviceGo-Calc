@@ -18,9 +18,11 @@ pipeline {
         stage('Gatling Test'){
             steps{
                 sh '''
-                cd ./
-                chmod +x config.sh
-                ./config.sh
+                    #!/bin/bash
+		            cd app
+                    cp TestSimulation.scala /home/ilegra/gatling-charts-highcharts-bundle-3.8.4/user-files/simulations/computerdatabase/
+		            cd  /home/ilegra/gatling-charts-highcharts-bundle-3.8.4/user-files/simulations/computerdatabase/
+		            ./gatling.sh -s TestSimulation --run-mode local
                 '''
             }
         }
